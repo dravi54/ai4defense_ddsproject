@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Word Frequency Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Word Frequency Results</h1>
+    <img src="{{ graph_url }}" alt="Word Frequency Graph"><br><br>
+    <table>
+        <tr>
+            <th>Word</th>
+            <th>Frequency</th>
+        </tr>
+        {% for word, freq in word_freq.items() %}
+        <tr>
+            <td>{{ word }}</td>
+            <td>{{ freq }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
