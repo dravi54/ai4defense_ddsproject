@@ -41,10 +41,10 @@ def index():
         ax.set_title('Frequency of Words in PDF Document')
         ax.set_xlabel('Word')
         ax.set_ylabel('Frequency')
-        plt.savefig('static/graph.png')
+        plt.savefig('graph.png')
 
         # Display the results
-        return render_template('results.html', word_freq=word_freq, graph_url='/static/graph.png')
+        return render_template('result.html', word_freq=word_freq, graph_url='graph.png')
 
     return render_template('index.html')
 
