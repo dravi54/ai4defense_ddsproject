@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import requests
 import re
+import os
 
 app = Flask(__name__)
 
@@ -41,10 +42,13 @@ def index():
         ax.set_title('Frequency of Words in PDF Document')
         ax.set_xlabel('Word')
         ax.set_ylabel('Frequency')
-        plt.savefig('graph.png')
+        
+        # Save the graph in the static folder
+        graph_path = os.path.join('static', 'graph.png')
+        plt.savefig(graph_path)
 
         # Display the results
-        return render_template('result.html', word_freq=word_freq, graph_url='graph.png')
+        return render_template('result.html', word_freq=word_freq, graph_url='static/graph.png')
 
     return render_template('index.html')
 
